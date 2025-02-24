@@ -1,4 +1,5 @@
 import { setCookie, deleteCookie } from "cookies-next";
+import { useRouter } from "next/router";
 
 export const login = async (correo: string, contrasenia: string) => {
     const response = await fetch("http://localhost:8080/api/auth/login", {
@@ -20,6 +21,5 @@ export const login = async (correo: string, contrasenia: string) => {
 
 export const logout = () => {
     deleteCookie("token"); // 🍪 Elimina la cookie
-    window.location.href = "/login"; // 🔄 Redirige al login
 };
   

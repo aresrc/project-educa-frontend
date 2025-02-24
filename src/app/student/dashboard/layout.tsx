@@ -81,7 +81,10 @@ export default function DashboardLayout({
         </nav>
         <div className="p-4 border-t">
           <button
-            onClick={logout}
+            onClick={() => {
+              logout();
+              router.push("/login")
+            }}
             className="flex items-center gap-3 p-3 w-full rounded-lg hover:bg-red-100 text-red-600 hover:text-red-700"
           >
             <LogOut className="h-5 w-5" />
