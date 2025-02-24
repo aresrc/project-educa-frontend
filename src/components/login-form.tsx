@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { AlertCircle } from "lucide-react"
+import { AlertCircle, Loader2 } from "lucide-react"
 import { login } from "@/services/auth"
 import { useRouter } from "next/navigation";
 
@@ -14,6 +14,7 @@ export default function LoginForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async(e: React.FormEvent) => {
@@ -23,12 +24,14 @@ export default function LoginForm() {
       setError("Por favor, complete todos los campos.")
     } else {
       setError("")
+      setLoading(true);
       console.log("Intento de inicio de sesión con:", email, password)
       try{
         await login(email, password);
         router.push("/student/dashboard");
       } catch (err) {
         setError("Credenciales inválidas");
+        setLoading(false);
       }
     }
   }
@@ -58,8 +61,14 @@ export default function LoginForm() {
           </div>
         </div>
       )}
-      <Button type="submit" className="w-full bg-green-600 hover:bg-green-700">
-        Iniciar Sesión
+      <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={loading}>
+      {loading ? (
+          <>
+            <Loader2 className="h-5 w-5 animate-spin mr-2" /> Cargando...
+          </>
+        ) : (
+          "Iniciar Sesión"
+        )}
       </Button>
     </form>
   )
