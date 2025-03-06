@@ -18,7 +18,6 @@ export default function AdminDashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  // En una aplicación real, estos datos vendrían de una API o de la sesión
   const adminUser = {
     name: "Admin Principal",
     role: "Administrador",

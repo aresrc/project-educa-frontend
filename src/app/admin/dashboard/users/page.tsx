@@ -64,7 +64,7 @@ export default function UsersPage() {
       phone: "987654321",
       profileType: "Estudiante",
     },
-    {
+    /*{
       id: 2,
       name: "María Rodríguez",
       email: "maria.rodriguez@example.com",
@@ -147,7 +147,7 @@ export default function UsersPage() {
       gender: "Femenino",
       phone: "978456123",
       profileType: "Estudiante",
-    },
+    },*/
   ])
 
   const filteredUsers = users.filter(

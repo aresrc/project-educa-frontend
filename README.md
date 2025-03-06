@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto Frontend - Educatoon
 
-## Getting Started
+Este es el proyecto frontend de Educatoon, una academia preuniversitaria que brinda enseñanza de calidad en materias de ciencia y humanidades.
 
-First, run the development server:
+## Estructura del Proyecto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El proyecto está organizado de la siguiente manera:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+.gitignore
+.next/
+package.json
+public/
+src/
+  app/
+    admin/
+    coordinator/
+    student/
+    components/
+    contexts/
+    lib/
+    services/
+  components/
+src/middleware.ts
+tailwind.config.ts
+tsconfig.json
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Descripción de Carpetas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **.next/**: Archivos generados por Next.js durante la construcción del proyecto.
+- **public/**: Archivos públicos accesibles desde el navegador.
+- **src/app/**: Contiene las diferentes páginas y componentes de la aplicación.
+  - **admin/**: Páginas y componentes específicos para el panel de administración.
+  - **coordinator/**: Páginas y componentes específicos para el panel de coordinadores.
+  - **student/**: Páginas y componentes específicos para el panel de estudiantes.
+  - **components/**: Componentes reutilizables en toda la aplicación.
+  - **contexts/**: Contextos de React para manejar el estado global.
+  - **lib/**: Librerías y utilidades.
+  - **services/**: Servicios para interactuar con APIs.
+- **src/components/**: Componentes reutilizables en toda la aplicación.
+- **middleware.ts**: Middleware para manejar la autenticación.
+- **tailwind.config.ts**: Configuración de Tailwind CSS.
+- **tsconfig.json**: Configuración de TypeScript.
 
-## Learn More
+## Instalación
 
-To learn more about Next.js, take a look at the following resources:
+Sigue estos pasos para instalar y correr el proyecto en tu sistema:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerrequisitos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Node.js (versión 14 o superior)
+- npm (versión 6 o superior)
 
-## Deploy on Vercel
+### Pasos de Instalación
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Clona el repositorio:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+
+2. Instala las dependencias:
+
+`npm install`
+
+### Correr el Proyecto
+
+Para correr el proyecto en modo desarrollo, utiliza el siguiente comando:
+
+`npm run dev`
+
+Esto iniciará el servidor de desarrollo y podrás acceder a la aplicación en http://localhost:3000.
+
+### Construir el Proyecto
+
+Para construir el proyecto para producción, utiliza el siguiente comando:
+
+`npm run build`
+
+Esto generará una versión optimizada del proyecto en la carpeta .next.
+
+### Iniciar el Proyecto en Producción
+
+Para iniciar el proyecto en modo producción, utiliza el siguiente comando:
+
+`npm run start`
+
+Esto iniciará el servidor en modo producción y podrás acceder a la aplicación en http://localhost:3000.
+
+## Contribuir
+
+Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
+3. Realiza tus cambios y haz commit (git commit -am 'Agrega nueva funcionalidad').
+4. Sube tus cambios a tu fork (git push origin feature/nueva-funcionalidad).
+5. Abre un Pull Request.

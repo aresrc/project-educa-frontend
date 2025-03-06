@@ -19,7 +19,6 @@ export default function StudentDashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  // En una aplicación real, estos datos vendrían de una API o de la sesión
   const studentUser = {
     name: "Juan Pérez",
     role: "Estudiante",

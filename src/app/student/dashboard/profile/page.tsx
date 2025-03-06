@@ -15,7 +15,7 @@ interface ProfileData{
 export default function ProfilePage() {
 
   const [profileData, setProfileData] = useState<ProfileData | null>(null);
-  const userId = 1;
+  const userId = 5;
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/profile/${userId}`)
